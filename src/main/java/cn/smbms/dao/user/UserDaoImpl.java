@@ -19,7 +19,6 @@ import java.util.List;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-    @Override
     public int add(Connection connection, User user) throws Exception {
         // TODO Auto-generated method stub
         PreparedStatement pstm = null;
@@ -38,7 +37,6 @@ public class UserDaoImpl implements UserDao {
         return updateRows;
     }
 
-    @Override
     public User getLoginUser(Connection connection, String userCode)
             throws Exception {
         // TODO Auto-generated method stub
@@ -70,7 +68,6 @@ public class UserDaoImpl implements UserDao {
         return user;
     }
 
-    @Override
     public List<User> getUserList(Connection connection, String userName, int userRole, int currentPageNo, int pageSize)
             throws Exception {
         // TODO Auto-generated method stub
@@ -114,7 +111,6 @@ public class UserDaoImpl implements UserDao {
         return userList;
     }
 
-    @Override
     public int deleteUserById(Connection connection, Integer delId) throws Exception {
         // TODO Auto-generated method stub
         PreparedStatement pstm = null;
@@ -128,7 +124,6 @@ public class UserDaoImpl implements UserDao {
         return flag;
     }
 
-    @Override
     public User getUserById(Connection connection, String id) throws Exception {
         // TODO Auto-generated method stub
         User user = null;
@@ -162,7 +157,6 @@ public class UserDaoImpl implements UserDao {
         return user;
     }
 
-    @Override
     public int modify(Connection connection, User user) throws Exception {
         // TODO Auto-generated method stub
         int flag = 0;
@@ -179,7 +173,6 @@ public class UserDaoImpl implements UserDao {
         return flag;
     }
 
-    @Override
     public int updatePwd(Connection connection, int id, String pwd)
             throws Exception {
         // TODO Auto-generated method stub
@@ -194,7 +187,6 @@ public class UserDaoImpl implements UserDao {
         return flag;
     }
 
-    @Override
     public int getUserCount(Connection connection, String userName, int userRole)
             throws Exception {
         // TODO Auto-generated method stub
@@ -225,4 +217,43 @@ public class UserDaoImpl implements UserDao {
     }
 
 
+    @Override
+    public int add(User user) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public User getLoginUser(String userCode) throws Exception {
+        return null;
+    }
+
+    @Override
+    public List<User> getUserList(String userName, int userRole, int currentPageNo, int pageSize) throws Exception {
+        return null;
+    }
+
+    @Override
+    public int getUserCount(String userName, int userRole) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public int deleteUserById(Integer delId) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public User getUserById(String id) throws Exception {
+        return null;
+    }
+
+    @Override
+    public int modify(User user) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public int updatePwd(int id, String pwd) throws Exception {
+        return 0;
+    }
 }
